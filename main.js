@@ -1,5 +1,5 @@
 function enviarFormulario (e){
-    //e.preventDefault()
+    e.preventDefault()
     const nombre = document.getElementById('nombre')
     const correo = document.getElementById('correo')
     const mensaje = document.getElementById('mensaje')
@@ -10,7 +10,7 @@ function enviarFormulario (e){
         mensaje: mensaje.value
     }
     console.log(datosFormulario)
-    localStorage.setItem('usuario' , JSON.stringify())
+    localStorage.setItem('usuario' , JSON.stringify('usuario'))
 }
 enviarFormulario()
 
@@ -20,11 +20,10 @@ function mostrarUsuario() {
     const usuario1 = JSON.parse(localStorage.getItem('usuario'));
 
     if (usuario1) {
-        const informacionUsuario = `
-            <p>Nombre: ${usuario1.nombre}</p>
-            <p>Correo: ${usuario1.correo}</p>
-            <p>Mensaje: ${usuario1.mensaje}</p>
-        `;
+        const informacionUsuario = 
+            /*usuario1:nombre.value,
+            usuario1:correo.value,
+            usuario1:mensaje.value;*/ //no funciona
         document.getElementById("resultado").innerHTML = informacionUsuario;
     }
 }
